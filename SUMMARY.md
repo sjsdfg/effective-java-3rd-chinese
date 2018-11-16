@@ -1,7 +1,7 @@
 # Table of contents
 
 * [README](README.md)
-* [01. 考虑使用静态工厂方法替代构造方法](01.-kao-lv-shi-yong-jing-tai-gong-chang-fang-fa-ti-dai-gou-zao-fang-fa.md)
+* [01. 考虑使用静态工厂方法替代构造方法](01. 考虑使用静态工厂方法替代构造方法.md)
 * [02. 当构造方法参数过多时使用builder模式](02.-dang-gou-zao-fang-fa-can-shu-guo-duo-shi-shi-yong-builder-mo-shi.md)
 * [03. 使用私有构造方法或枚类实现Singleton属性](03.-shi-yong-si-you-gou-zao-fang-fa-huo-mei-lei-shi-xian-singleton-shu-xing.md)
 * [04. 使用私有构造方法执行非实例化](04.-shi-yong-si-you-gou-zao-fang-fa-zhi-hang-fei-shi-li-hua.md)
