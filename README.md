@@ -10,6 +10,8 @@
 
 ~~**每日一更**~~(是不可能的了)
 
+https://sjsdfg.github.io/effctive-java-3rd-chinese/#/ 提供更好的在线阅读版本
+
 ## about this repository
 
 本来以为只是个直接搬运的活，实际上不是。主要工作如下：
