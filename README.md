@@ -8,7 +8,7 @@
 
 个人主要想把文章内容存成 markdown 格式 并且转换成为对应的 pdf，便于离线阅读。
 
-~~**每日一更**~~(是不可能的了)
+~~每日一更~~**是不可能的了**
 
 https://sjsdfg.github.io/effctive-java-3rd-chinese/#/ 提供更好的在线阅读版本
 
