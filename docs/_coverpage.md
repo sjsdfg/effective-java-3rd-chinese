@@ -6,7 +6,7 @@
 
 <!--<span id="busuanzi_container_site_pv">Site View : <span id="busuanzi_value_site_pv">-->
 
-[![stars](https://badgen.net/github/stars/sjsdfg/effective-java-3rd-chinese?icon=github&color=4ab8a1)](https://github.com/sjsdfg/effctive-java-3rd-chinese) [![forks](https://badgen.net/github/forks/sjsdfg/effective-java-3rd-chinese?icon=github&color=4ab8a1)](https://github.com/sjsdfg/effctive-java-3rd-chinese)
+[![stars](https://badgen.net/github/stars/sjsdfg/effective-java-3rd-chinese?icon=github&color=4ab8a1)](https://github.com/sjsdfg/effective-java-3rd-chinese) [![forks](https://badgen.net/github/forks/sjsdfg/effective-java-3rd-chinese?icon=github&color=4ab8a1)](https://github.com/sjsdfg/effective-java-3rd-chinese)
 
 [Get Started](README.md)
 
