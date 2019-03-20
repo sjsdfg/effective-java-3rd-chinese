@@ -10,7 +10,7 @@
 
 ~~每日一更~~**是不可能的了**
 
-https://sjsdfg.github.io/effctive-java-3rd-chinese/#/ 提供更好的在线阅读版本
+https://sjsdfg.github.io/effective-java-3rd-chinese/#/ 提供更好的在线阅读版本
 
 ## about this repository
 
