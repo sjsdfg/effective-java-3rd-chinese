@@ -68,9 +68,19 @@
 - [76. 保持失败原子性.md](notes/76.%20保持失败原子性.md)</br>
 - [77. 不要忽略异常.md](notes/77.%20不要忽略异常.md)</br>
 - [78. 同步访问共享的可变数据.md](notes/78.%20同步访问共享的可变数据.md)</br>
+- [79. 避免过度同步.md](notes/79.%20避免过度同步.md)</br>
+- [80. executor 、task 和 stream 优先于线程.md](notes/80.%20executor%20、task%20和%20stream%20优先于线程.md)</br>
+- [81. 相比 wait 和 notify 优先使用并发工具.md](notes/81.%20相比%20wait%20和%20notify%20优先使用并发工具.md)</br>
+- [82. 文档应包含线程安全属性.md](notes/82.%20文档应包含线程安全属性.md)</br>
+- [83. 明智审慎的使用延迟初始化.md](notes/83.%20明智审慎的使用延迟初始化.md)</br>
+- [84. 不要依赖线程调度器.md](notes/84.%20不要依赖线程调度器.md)</br>
+- [85. 优先选择 Java 序列化的替代方案.md](notes/85.%20优先选择%20Java%20序列化的替代方案.md)</br>
+- [86. 非常谨慎地实现 Serializable.md](notes/86.%20非常谨慎地实现%20Serializable.md)</br>
+- [87. 考虑使用自定义的序列化形式.md](notes/87.%20考虑使用自定义的序列化形式.md)</br>
 - [88. 保护性的编写 readObject 方法.md](notes/88.%20保护性的编写%20readObject%20方法.md)</br>
 - [89. 对于实例控制，枚举类型优于 readResolve.md](notes/89.%20对于实例控制，枚举类型优于%20readResolve.md)</br>
 - [90. 考虑用序列化代理代替序列化实例.md](notes/90.%20考虑用序列化代理代替序列化实例.md)</br>
+
 
 ## 😋 Give me a Favor
 <center>
