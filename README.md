@@ -4,15 +4,9 @@
 
 前51条：文章翻译来源地址：[https://www.jianshu.com/c/ce8cf0e13b23](https://www.jianshu.com/c/ce8cf0e13b23)
 
-**简书作者翻译速度太慢了。。个人从后往前翻译，期望总有一天能对上吧。**
-
-个人主要想把文章内容存成 markdown 格式 并且转换成为对应的 pdf，便于离线阅读。
-
-~~每日一更**是不可能的了**~~
-
-现在的章节已经齐全了
-
-https://sjsdfg.github.io/effective-java-3rd-chinese/#/ 提供更好的在线阅读版本
+现在全部章节已经更新完成
+- https://sjsdfg.github.io/effective-java-3rd-chinese/#/ 提供更好的在线阅读版本
+- [pdf 下载](https://github.com/sjsdfg/effective-java-3rd-chinese/releases/download/v1.0/effectivejava.pdf)
 
 ## about this repository
 
