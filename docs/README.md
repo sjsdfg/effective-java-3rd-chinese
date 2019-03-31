@@ -4,7 +4,7 @@
 
 - [CS-Notes-PDF](https://github.com/sjsdfg/CS-Notes-PDF) </br>
 
-## 💻 高效 Java 第三版
+## 📚 高效 Java 第三版
 
 - [01. 考虑使用静态工厂方法替代构造方法.md](notes/01.%20考虑使用静态工厂方法替代构造方法.md)</br>
 - [02. 当构造方法参数过多时使用builder模式.md](notes/02.%20当构造方法参数过多时使用builder模式.md)</br>
@@ -97,7 +97,7 @@
 - [89. 对于实例控制，枚举类型优于 readResolve.md](notes/89.%20对于实例控制，枚举类型优于%20readResolve.md)</br>
 - [90. 考虑用序列化代理代替序列化实例.md](notes/90.%20考虑用序列化代理代替序列化实例.md)</br>
 
-## 💻 高效 Java 第三版完整版阅读
+## 📖 高效 Java 第三版完整版阅读
 
 - [高效 Java 第三版完整版](doc/effective-java-3rd-chinese.md)</br>
 
