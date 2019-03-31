@@ -9,10 +9,10 @@
 [![stars](https://badgen.net/github/stars/sjsdfg/effective-java-3rd-chinese?icon=github&color=4ab8a1)](https://github.com/sjsdfg/effective-java-3rd-chinese) [![forks](https://badgen.net/github/forks/sjsdfg/effective-java-3rd-chinese?icon=github&color=4ab8a1)](https://github.com/sjsdfg/effective-java-3rd-chinese)
 
 <span id="busuanzi_container_site_pv">
-    本页总访问次数:<span id="busuanzi_value_site_pv"> 次 </span> 
+    本页总访问次数:<span id="busuanzi_value_site_pv"></span> 
 </span>
 <span id="busuanzi_container_site_uv" > 
-    | 总访客数: <span id="busuanzi_value_site_uv"></span> 人 
+    | 总访客数: <span id="busuanzi_value_site_uv"></span>
 </span>
 
 [Get Started](README.md)
