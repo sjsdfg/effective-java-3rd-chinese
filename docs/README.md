@@ -12,7 +12,7 @@
 
 ## 友情链接
 
- - [On Java 8中文版](https://github.com/LingCoder/OnJava8)
+ - [On Java 8中文版 - 即 thinking in java 第五版](https://github.com/LingCoder/OnJava8)
 
 ## 📚 高效 Java 第三版
 
