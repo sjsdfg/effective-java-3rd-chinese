@@ -3,7 +3,8 @@
 前51条：文章翻译来源地址：[https://www.jianshu.com/c/ce8cf0e13b23](https://www.jianshu.com/c/ce8cf0e13b23)
 
 现在全部章节已经更新完成
-- https://sjsdfg.github.io/effective-java-3rd-chinese/#/ 提供更好的在线阅读版本
+- [github pages](https://sjsdfg.github.io/effective-java-3rd-chinese/#/)：提供更好的在线阅读版本
+- [gitee pages](http://sjsdfg.gitee.io/effective-java-3rd-chinese/#/)： 提供更快的访问速度
 - [pdf 下载](https://github.com/sjsdfg/effective-java-3rd-chinese/releases/download/v1.0/effectivejava.pdf)
 
 ## about this repository
