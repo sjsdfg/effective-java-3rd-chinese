@@ -5,7 +5,7 @@
 现在全部章节已经更新完成
 - [github pages](https://sjsdfg.github.io/effective-java-3rd-chinese/#/)：提供更好的在线阅读版本
 - [gitee pages](http://sjsdfg.gitee.io/effective-java-3rd-chinese/#/)： 提供更快的访问速度
-- [pdf 下载](https://github.com/sjsdfg/effective-java-3rd-chinese/releases/download/v1.0/effectivejava.pdf)
+- [pdf 下载](https://github.com/sjsdfg/effective-java-3rd-chinese/releases/download/v1.1/Effective.Java.pdff)
 
 ## about this repository
 
