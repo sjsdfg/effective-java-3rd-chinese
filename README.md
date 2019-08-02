@@ -17,6 +17,10 @@
 
 markdown 文件以及英文版原版链接也都放在了 github 上面，希望小伙伴也可以中英文对照，给出一些意见。
 
+## 一起来交流
+
+Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=1027&k=5tscKwN)
+
 ## 额外资源
 
 * [effective-java-2nd 中文版 ](https://pan.baidu.com/s/1R6H9UHbFYubWWY9HrclZ2A)
