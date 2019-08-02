@@ -10,6 +10,14 @@
 * [effective-java-3rd 英文版 ](https://pan.baidu.com/s/1mJx5ZrOD_RPjf3ghQnBV5g)
 * [effective-java-3rd 源代码](https://github.com/jbloch/effective-java-3e-source-code)
 
+## 一起来校对翻译
+
+Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=1027&k=5tscKwN)
+
+![Effective Java 第三版翻译校对群](https://img-blog.csdnimg.cn/20190802232410489.png)
+
+
+
 ## 友情链接
 
  - [On Java 8中文版 - 即 thinking in java 第五版](https://github.com/LingCoder/OnJava8)
