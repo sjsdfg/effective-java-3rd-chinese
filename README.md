@@ -21,7 +21,7 @@ markdown 文件以及英文版原版链接也都放在了 github 上面，希望
 
 Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=1027&k=5tscKwN)
 
-![Effective Java 第三版翻译校对群](https://img-blog.csdnimg.cn/201908022320408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTE2Njk3MDA=,size_16,color_FFFFFF,t_70)
+![Effective Java 第三版翻译校对群](https://img-blog.csdnimg.cn/20190802232410489.png)
 
 ## 额外资源
 
