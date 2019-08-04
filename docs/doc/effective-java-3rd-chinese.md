@@ -25,25 +25,25 @@ public static Boolean valueOf(boolean b) {
 
 　　因为他们有名字，所以静态工厂方法不会受到上面讨论中的限制。在类中似乎需要具有相同签名的多个构造方法的情况下，用静态工厂方法替换构造方法，并仔细选择名称来突出它们的差异。
 
-　　**静态工厂方法的第二个优点是，与构造方法不同，它们不需要每次调用时都创建一个新对象。** 这允许不可变的类 (条目 17) 使用预先构建的实例，或者在构造时缓存实例，并反复分配它们以避免创建不必要的重复对象。`Boolean.valueof(boolean)` 方法说明了这种方法：它从不创建对象。这种技术类似于 `Flyweight` 模式[Gamma95]。如果经常请求等价对象，那么它可以极大地提高性能，特别是如果在创建它们非常昂贵的情况下。
+　　**静态工厂方法的第二个优点是，与构造方法不同，它们不需要每次调用时都创建一个新对象。** 这允许不可变的类 (条目 17) 使用预先构建的实例，或者在构造时缓存实例，并反复分配它们以避免创建不必要的重复对象。`Boolean.valueof(boolean)` 方法说明了这种方法：它从不创建对象。这种技术类似于 `Flyweight` 模式[Gamma95]。如果经常请求等价对象，那么它可以极大地提高性能，尤其是在创建对象需要很大代价的情况下。
 
-　　静态工厂方法从重复调用返回相同对象的能力允许类保持在任何时候存在的实例的严格控制。这样做的类被称为实例控制（ instance-controlled）。编写实例控制类的原因有很多。实例控制允许一个类来保证它是一个单例 (3) 项或不可实例化的 (条目 4)。同时,它允许一个不可变的值类 (条目 17) 保证不存在两个相同的实例：当且仅当 `a == b` 时 `a.equals(b)`。这是享元模式的基础[Gamma95]。`Enum` 类型 (条目 34) 提供了这个保证。
+　　静态工厂方法重复调用返回相同实例这个特点可以让类在任何时候都能对实例保持严格的控制。这样做的类被称为实例控制类（ instance-controlled）。有很多理由足以让我们去我们编写实例控制类。实例控制可以保证一个类是单例 的(条目3) 或不可实例化的 (条目 4)。同时,它允许一个不可变的值类 (条目 17) 保证不存在两个相等但不相同的实例，也就是说当且仅当 `a == b` 时才有 `a.equals(b)`。这是`Flyweight`模式的基础[Gamma95]。`Enum` 类型 (条目 34) 可以做到这点。
 
 　　**静态工厂方法的第三个优点是，与构造方法不同，它们可以返回其返回类型的任何子类型的对象。** 这为你在选择返回对象的类时提供了很大的灵活性。
 
-　　这种灵活性的一个应用是 API 可以返回对象而不需要公开它的类。 以这种方式隐藏实现类会使 API 非常紧凑 I。 这种技术适用于基于接口的框架（条目 20），其中接口为静态工厂方法提供自然返回类型。
+　　这种灵活性的一个应用是 API 可以返回对象而不需要公开它的类。 以这种方式隐藏实现类会使 API 非常紧凑 。 这种技术适用于基于接口的框架（条目 20），其中接口为静态工厂方法提供自然返回类型。
 
-　　在 Java 8 之前，接口不能有静态方法。根据约定，一个名为 `Type` 的接口的静态工厂方法被放入一个非实例化的伙伴类 (companion class)(条目 4)`Types` 类中。例如，Java 集合框架有 45 个接口的实用工具实现，提供不可修改的集合、同步集合等等。几乎所有这些实现都是通过静态工厂方法在一个非实例类 (`java .util. collections`) 中导出的。返回对象的类都是非公开的。
+　　在 Java 8 之前，接口不能有静态方法。根据约定，一个名为 `Type` 的接口的静态工厂方法被放入一个不可实例化的伙伴类 (companion class)(条目 4)`Types` 类中。例如，Java 集合框架有 45 个接口的实用工具实现，提供不可修改的集合、同步集合等等。几乎所有这些实现都是通过静态工厂方法在一个不可实例化的类 (`java .util. collections`) 中返回的。返回对象的类型都是隐藏的。
 
-　　`Collections` 框架 API 的规模要比它之前输出的 45 个单独的公共类要小得多，每个类有个便利类的实现。不仅是 API 的大部分减少了，还包括概念上的权重：程序员必须掌握的概念的数量和难度，才能使用 API。程序员知道返回的对象恰好有其接口指定的 API，因此不需要为实现类读阅读额外的类文档。此外，使用这种静态工厂方法需要客户端通过接口而不是实现类来引用返回的对象，这通常是良好的实践 (条目 64)。
+　　`Collections` 框架 API 的规模要比它之前可以返回的 45 个单独的公共类要小得多，每个类在集合框架中都有一个便利的实现。不仅是 API 的大部分减少了，还包括概念上的权重：程序员使用 API必须掌握的概念的数量和难度。程序员知道返回的对象恰好有其接口指定的 API，因此不需要为实现类读阅读额外的类文档。此外，使用这种静态工厂方法需要客户端通过接口而不是实现类来引用返回的对象，这通常是良好的实践 (条目 64)。
 
 　　从 Java 8 开始，接口不能包含静态方法的限制被取消了，所以通常没有理由为接口提供一个不可实例化的伴随类。 很多公开的静态成员应该放在这个接口本身。 但是，请注意，将这些静态方法的大部分实现代码放在单独的包私有类中仍然是必要的。 这是因为 Java 8 要求所有接口的静态成员都是公共的。 Java 9 允许私有静态方法，但静态字段和静态成员类仍然需要公开。
 
 　　**静态工厂的第四个优点是返回对象的类可以根据输入参数的不同而不同。** 声明的返回类型的任何子类都是允许的。 返回对象的类也可以随每次发布而不同。
 
-　　`EnumSet` 类（条目 36）没有公共构造方法，只有静态工厂。 在 OpenJDK 实现中，它们根据底层枚举类型的大小返回两个子类中的一个的实例：如果大多数枚举类型具有 64 个或更少的元素，静态工厂将返回一个 `RegularEnumSet` 实例， 返回一个 `long` 类型；如果枚举类型具有六十五个或更多元素，则工厂将返回一个 `JumboEnumSet` 实例，返回一个 `long` 类型的数组。
+　　`EnumSet` 类（条目 36）没有公共构造方法，只有静态工厂。 在 OpenJDK 实现中，它们根据底层枚举类型的大小返回两个子类中的一个的实例：大多数枚举类型具有 64 个或更少的元素，静态工厂将返回一个 `RegularEnumSet` 实例， 底层是 `long` 类型；如果枚举类型具有六十五个或更多元素，则工厂将返回一个 `JumboEnumSet` 实例， 底层是`long` 类型的数组。
 
-　　这两个实现类的存在对于客户是不可见的。 如果 `RegularEnumSet` 不再为小枚举类型提供性能优势，则可以在未来版本中将其淘汰，而不会产生任何不良影响。 同样，未来的版本可能会添加 `EnumSet` 的第三个或第四个实现，如果它证明有利于性能。 客户既不知道也不关心他们从工厂返回的对象的类别; 他们只关心它是 `EnumSet` 的一些子类。
+　　这两个实现类的存在对于客户端而言是不可见的。 如果 `RegularEnumSet` 对于小的枚举类型不再具有性能优势，则可以在未来版本中将其淘汰，且不会产生任何不良影响。 同样，未来的版本可能会添加 `EnumSet` 更多的实现，如果可以证明它能够提高性能。 客户既不知道也不关心他们从工厂返回的对象的类型; 他们只知道它是 `EnumSet` 的子类。
 
 　　**静态工厂的第 5 个优点是，在编写包含该方法的类时，返回的对象的类不需要存在。** 这种灵活的静态工厂方法构成了服务提供者框架的基础，比如 Java 数据库连接 API(JDBC)。服务提供者框架是提供者实现服务的系统，并且系统使得实现对客户端可用，从而将客户端从实现中分离出来。
 
@@ -53,23 +53,23 @@ public static Boolean valueOf(boolean b) {
 
 　　服务提供者框架模式有许多变种。 例如，服务访问 API 可以向客户端返回比提供者提供的更丰富的服务接口。 这是桥接模式[Gamma95]。 依赖注入框架（条目 5）可以被看作是强大的服务提供者。 从 Java 6 开始，平台包含一个通用的服务提供者框架 `java.util.ServiceLoader`，所以你不需要，一般也不应该自己编写（条目 59）。 JDBC 不使用 `ServiceLoader`，因为前者早于后者。
 
-　　**只提供静态工厂方法的主要限制是，没有公共或受保护构造方法的类不能被子类化。** 例如，在 `Collections` 框架中不可能将任何方便实现类子类化。可以说，这可能是因祸得福，因为它鼓励程序员使用组合而不是继承 (条目 18)，并且是不可变类型 (条目 17)。
+　　**只提供静态工厂方法的主要限制是，没有公共或受保护构造方法的类不能被子类化。** 例如，在 `Collections` 框架中不可能将任何方便实现类子类化。可以说，这可能是因祸得福，因为它鼓励程序员使用组合而不是继承 (条目 18)，并且它是不可变类型所必须的 (条目 17)。
 
-　　**静态工厂方法的第二个缺点是，程序员很难找到它们。** 它们不像构造方法那样在 API 文档中突出，因此很难找出如何实例化一个提供静态工厂方法而不是构造方法的类。Javadoc 工具可能有一天会引起对静态工厂方法的注意。与此同时，可以通过将注意力吸引到类或接口文档中的静态工厂以及遵守通用的命名约定来减少这个问题。下面是一些静态工厂方法的常用名称。以下清单并非完整：
+　　**静态工厂方法的第二个缺点是，程序员很难找到它们。** 它们不像构造方法那样在 API 文档中突出，因此很难找出如何实例化一个提供静态工厂方法而不是构造方法的类。Javadoc 工具可能有一天会引起对静态工厂方法的注意。与此同时，可以通过将注意力吸引到类或接口文档中的静态工厂以及遵守通用的命名惯例来减少这个问题。下面是一些静态工厂方法的常用名称。以下清单还远不完整：
 
- - from——A 类型转换方法，它接受单个参数并返回此类型的相应实例，例如：**Date d = Date.from(instant)**;
- - of——一个聚合方法，接受多个参数并返回该类型的实例，并把他们合并在一起，例如：**Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING)**;
+ - from——类型转换方法，它接受单个参数并返回此类型的相应实例，例如：**Date d = Date.from(instant)**;
+ - of——聚合方法，接受多个参数并返回该类型的实例，并把他们合并在一起，例如：**Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING)**;
  - valueOf——from 和 to 更为详细的替代 方式，例如：**BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE)**;
  - instance 或 getinstance——返回一个由其参数 (如果有的话) 描述的实例，但不能说它具有相同的值，例如：**StackWalker luke = StackWalker.getInstance(options)**;
- - create 或 newInstance——与 instance 或 getInstance 类似，除了该方法保证每个调用返回一个新的实例，例如：**Object newArray = Array.newInstance(classObject, arrayLen)**;
- - getType——与 getInstance 类似，但是如果在工厂方法中不同的类中使用。**Type** 是工厂方法返回的对象类型，例如：**FileStore fs = Files.getFileStore(path)**;
- - newType——与 newInstance 类似，但是如果在工厂方法中不同的类中使用。Type 是工厂方法返回的对象类型，例如：**BufferedReader br = Files.newBufferedReader(path)**;
+ - create 或 newInstance——与 instance 或 getInstance 类似，除此之外该方法保证每个调用返回一个新的实例，例如：**Object newArray = Array.newInstance(classObject, arrayLen)**;
+ - getType——与 getInstance 类似，**getType**中的**Type** 是工厂方法返回的对象类型，例如：**FileStore fs = Files.getFileStore(path)**;
+ - newType——与 newInstance 类似，**newType**中的Type 是工厂方法返回的对象类型，例如：**BufferedReader br = Files.newBufferedReader(path)**;
  - type—— getType 和 newType 简洁的替代方式，例如：**List<Complaint> litany = Collections.list(legacyLitany)**;
 
-　　总之，静态工厂方法和公共构造方法都有它们的用途，并且了解它们的相对优点是值得的。通常，静态工厂更可取，因此避免在没有考虑静态工厂的情况下提供公共构造方法。
+　　总之，静态工厂方法和公共构造方法都有它们的用途，并且了解它们的相对优点是值得的。通常，静态工厂更可取，因此避免在没有考虑静态工厂的情况下直接使用公共构造方法。
 
 
- 
+
 # 2. 当构造方法参数过多时使用 builder 模式
 
 
@@ -939,7 +939,7 @@ public boolean equals(Object o) {
 }
 ```
 　　**传递性（Transitivity）**——equals 约定的第三个要求是，如果第一个对象等于第二个对象，第二个对象等于第三个对象，那么第一个对象必须等于第三个对象。同样，也不难想象，无意中违反了这一要求。考虑子类的情况， 将新值组件（ value component）添加到其父类中。换句话说，子类添加了一个信息，它影响了 equals 方法比较。让我们从一个简单不可变的二维整数类型 Point 类开始：
- 
+
 ```java
 public class Point {
     private final int x;
@@ -991,14 +991,14 @@ public boolean equals(Object o) {
 ```
 
 　　当你比较 Point 对象和 ColorPoint 对象时，可以会得到不同的结果，反之亦然。前者的比较忽略了颜色属性，而后者的比较会一直返回 false，因为参数的类型是错误的。为了让问题更加具体，我们创建一个 Point 对象和 ColorPoint 对象：
- 
+
 ```java
 Point p = new Point(1, 2);
 ColorPoint cp = new ColorPoint(1, 2, Color.RED);
 ```
 
 　　p.equals(cp) 返回 true，但是 cp.equals(p) 返回 false。你可能想使用 ColorPoint.equals 通过混合比较的方式来解决这个问题。
- 
+
 ```java
 @Override
 public boolean equals(Object o) {
@@ -1029,7 +1029,7 @@ ColorPoint p3 = new ColorPoint(1, 2, Color.BLUE);
 　　那么解决方案是什么？ 事实证明，这是面向对象语言中关于等价关系的一个基本问题。 除非您愿意放弃面向对象抽象的好处，否则无法继承可实例化的类，并在保留 equals 约定的同时添加一个值组件。
 
 　　你可能听说过，可以继承一个可实例化的类并添加一个值组件，同时通过在 equals 方法中使用一个 getClass 测试代替 instanceof 测试来保留 equals 约定：
- 
+
 ```java
 @Override
 public boolean equals(Object o) {
@@ -1041,7 +1041,7 @@ public boolean equals(Object o) {
 ```
 
 　　只有当对象具有相同的实现类时，才会产生相同的效果。这看起来可能不是那么糟糕，但是结果是不可接受的:一个 Point 类子类的实例仍然是一个 Point 的实例，它仍然需要作为一个 Point 来运行，但是如果你采用这个方法，就会失败！假设我们要写一个方法来判断一个 Point 对象是否在 unitCircle 集合中。我们可以这样做：
- 
+
 ```java
 private static final Set<Point> unitCircle = Set.of(
         new Point( 1,  0), new Point( 0,  1),
@@ -1053,7 +1053,7 @@ public static boolean onUnitCircle(Point p) {
 ```
 
 　　虽然这可能不是实现功能的最快方法，但它可以正常工作。假设以一种不添加值组件的简单方式继承 Point 类，比如让它的构造方法跟踪记录创建了多少实例：
- 
+
 ```java
 public class CounterPoint extends Point {
     private static final AtomicInteger counter =
@@ -1073,7 +1073,7 @@ public class CounterPoint extends Point {
 　　里氏替代原则（ Liskov substitution principle）指出，任何类型的重要属性都应该适用于所有的子类型，因此任何为这种类型编写的方法都应该在其子类上同样适用[Liskov87]。 这是我们之前声明的一个正式陈述，即 Point 的子类（如 CounterPoint）仍然是一个 Point，必须作为一个 Point 类来看待。 但是，假设我们将一个 CounterPoint 对象传递给 onUnitCircle 方法。 如果 Point 类使用基于 getClass 的 equals 方法，则无论 CounterPoint 实例的 x 和 y 坐标如何，onUnitCircle 方法都将返回 false。 这是因为大多数集合（包括 onUnitCircle 方法使用的 HashSet）都使用 equals 方法来测试是否包含元素，并且 CounterPoint 实例并不等于任何 Point 实例。 但是，如果在 Point 上使用了适当的基于 `instanceof` 的 equals 方法，则在使用 CounterPoint 实例呈现时，同样的 onUnitCircle 方法可以正常工作。
 
 　　虽然没有令人满意的方法来继承一个可实例化的类并添加一个值组件，但是有一个很好的变通方法：按照条目 18 的建议，“优先使用组合而不是继承”。取代继承 Point 类的 ColorPoint 类，可以在 ColorPoint 类中定义一个私有 Point 属性，和一个公共的试图（view）（条目 6）方法，用来返回具有相同位置的 ColorPoint 对象。
- 
+
 ```java
 // Adds a value component without violating the equals contract
 public class ColorPoint {
@@ -1113,7 +1113,7 @@ public class ColorPoint {
 　　不管一个类是不是不可变的，都不要写一个依赖于不可靠资源的 equals 方法。 如果违反这一禁令，满足一致性要求是非常困难的。 例如，`java.net.URL` 类中的 equals 方法依赖于与 URL 关联的主机的 IP 地址的比较。 将主机名转换为 IP 地址可能需要访问网络，并且不能保证随着时间的推移会产生相同的结果。 这可能会导致 URL 类的 equals 方法违反 equals 约定，并在实践中造成问题。 URL 类的 equals 方法的行为是一个很大的错误，不应该被效仿。 不幸的是，由于兼容性的要求，它不能改变。 为了避免这种问题，equals 方法应该只对内存驻留对象执行确定性计算。
 
 　　**非空性（Non-nullity）**——最后 equals 约定的要求没有官方的名称，所以我冒昧地称之为“非空性”。意思是说说所有的对象都必须不等于 null。虽然很难想象在调用 `o.equals(null)` 的响应中意外地返回 true，但不难想象不小心抛出 `NullPointerException` 异常的情况。通用的约定禁止抛出这样的异常。许多类中的 equals 方法都会明确阻止对象为 null 的情况：
- 
+
 ```java
 @Override 
 public boolean equals(Object o) {
@@ -1133,7 +1133,7 @@ public boolean equals(Object o) {
     MyType mt = (MyType) o;
     ...
 }
-``` 
+```
 
 　　如果此类型检查漏掉，并且 equals 方法传递了错误类型的参数，那么 equals 方法将抛出 `ClassCastException` 异常，这违反了 equals 约定。 但是，如果第一个操作数为 null，则指定 instanceof 运算符返回 false，而不管第二个操作数中出现何种类型[JLS，15.20.2]。 因此，如果传入 null，类型检查将返回 false，因此不需要 明确的 null 检查。
 
@@ -1155,7 +1155,7 @@ public boolean equals(Object o) {
 　　当你完成编写完 equals 方法时，问你自己三个问题：它是对称的吗?它是传递吗?它是一致的吗?除此而外，编写单元测试加以排查，除非使用 AutoValue 框架 (第 49 页) 来生成 equals 方法，在这种情况下可以安全地省略测试。如果持有的属性失败，找出原因，并相应地修改 equals 方法。当然，equals 方法也必须满足其他两个属性 (自反性和非空性)，但这两个属性通常都会满足。
 
 　　在下面这个简单的 `PhoneNumber` 类中展示了根据之前的配方构建的 equals 方法：
- 
+
 ```java
 public final class PhoneNumber {
 
@@ -1196,7 +1196,7 @@ public final class PhoneNumber {
  1. **当重写 equals 方法时，同时也要重写 hashCode 方法（条目 11）**。
  2. **不要让 equals 方法试图太聪明。**如果只是简单地测试用于相等的属性，那么要遵守 equals 约定并不困难。如果你在寻找相等方面过于激进，那么很容易陷入麻烦。一般来说，考虑到任何形式的别名通常是一个坏主意。例如，File 类不应该试图将引用的符号链接等同于同一文件对象。幸好 File 类并没这么做。
  3. **在 equal 时方法声明中，不要将参数 Object 替换成其他类型。**对于程序员来说，编写一个看起来像这样的 equals 方法并不少见，然后花上几个小时苦苦思索为什么它不能正常工作：在 equal 时方法声明中，不要将参数 Object 替换成其他类型。对于程序员来说，编写一个看起来像这样的 equals 方法并不少见，然后花上几个小时苦苦思索为什么它不能正常工作。
- 
+
 ```java
 // Broken - parameter type must be Object!
 public boolean equals(MyClass o) {   
@@ -1206,14 +1206,14 @@ public boolean equals(MyClass o) {
 
 　　问题在于这个方法并没有重写 Object.equals 方法，它的参数是 Object 类型的，这样写只是重载了 equals 方法（Item 52）。 即使除了正常的方法之外，提供这种“强类型”的 equals 方法也是不可接受的，因为它可能会导致子类中的 Override 注解产生误报，提供不安全的错觉。
 在这里，使用 Override 注解会阻止你犯这个错误 (条目 40)。这个 equals 方法不会编译，错误消息会告诉你到底错在哪里：
- 
+
 ```java
 // Still broken, but won’t compile
 @Override 
 public boolean equals(MyClass o) {
     …
 }
-``` 
+```
 　　编写和测试 equals(和 hashCode) 方法很繁琐，生的代码也很普通。替代手动编写和测试这些方法的优雅的手段是，使用谷歌 AutoValue 开源框架，该框架自动为你生成这些方法，只需在类上添加一个注解即可。在大多数情况下，AutoValue 框架生成的方法与你自己编写的方法本质上是相同的。
 
 　　很多 IDE（例如 Eclipse，NetBeans，IntelliJ IDEA 等）也有生成 equals 和 hashCode 方法的功能，但是生成的源代码比使用 AutoValue 框架的代码更冗长、可读性更差，不会自动跟踪类中的更改，因此需要进行测试。这就是说，使用 IDE 工具生成 equals(和 hashCode) 方法通常比手动编写它们更可取，因为 IDE 工具不会犯粗心大意的错误，而人类则会。
@@ -1258,7 +1258,7 @@ m.put(new PhoneNumber(707, 867, 5309), "Jenny");
     
     &nbsp;&nbsp;&nbsp;&nbsp;-- i. 如果这个属性是基本类型的，使用 `Type.hashCode(f)` 方法计算，其中 `Type` 类是对应属性 `f` 基本类型的包装类。<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;-- ii. 如果该属性是一个对象引用，并且该类的 equals 方法通过递归调用 equals 来比较该属性，并递归地调用 hashCode 方法。 如果需要更复杂的比较，则计算此字段的“范式（“canonical representation）”，并在范式上调用 hashCode。 如果该字段的值为空，则使用 0（也可以使用其他常数，但通常来使用 0 表示）。<br/>
-   &nbsp;&nbsp;&nbsp;&nbsp; -- iii. 如果属性 `f` 是一个数组，把它看作每个重要的元素都是一个独立的属性。 也就是说，通过递归地应用这些规则计算每个重要元素的哈希码，并且将每个步骤 2.b 的值合并。 如果数组没有重要的元素，则使用一个常量，最好不要为 0。如果所有元素都很重要，则使用 `Arrays.hashCode` 方法。<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp; -- iii. 如果属性 `f` 是一个数组，把它看作每个重要的元素都是一个独立的属性。 也就是说，通过递归地应用这些规则计算每个重要元素的哈希码，并且将每个步骤 2.b 的值合并。 如果数组没有重要的元素，则使用一个常量，最好不要为 0。如果所有元素都很重要，则使用 `Arrays.hashCode` 方法。<br/>
 
     b. 将步骤 2.a 中属性 c 计算出的哈希码合并为如下结果：`result = 31 * result + c;`
 
@@ -1343,10 +1343,10 @@ public int hashCode() {
 　　**不要为 hashCode 返回的值提供详细的规范，因此客户端不能合理地依赖它； 你可以改变它的灵活性。** Java 类库中的许多类（例如 String 和 Integer）都将 hashCode 方法返回的确切值指定为实例值的函数。 这不是一个好主意，而是一个我们不得不忍受的错误：它妨碍了在未来版本中改进哈希函数的能力。 如果未指定细节并在散列函数中发现缺陷，或者发现了更好的哈希函数，则可以在后续版本中对其进行更改。
 
 　　总之，每次重写 equals 方法时都必须重写 hashCode 方法，否则程序将无法正常运行。你的 hashCode 方法必须遵从 Object 类指定的常规约定，并且必须执行合理的工作，将不相等的哈希码分配给不相等的实例。如果使用第 51 页的配方，这很容易实现。如条目 10 所述，AutoValue 框架为手动编写 equals 和 hashCode 方法提供了一个很好的选择，IDE 也提供了一些这样的功能。
- 
 
 
-  [1]: http://com.google.common.hash.hashing/
+
+[1]: http://com.google.common.hash.hashing/
 # 12. 始终重写 toString 方法
 
 　　虽然 Object 类提供了 toString 方法的实现，但它返回的字符串通常不是你的类的用户想要看到的。 它由类名后跟一个“at”符号（@）和哈希码的无符号十六进制表示组成，例如 `PhoneNumber@163b91`。 toString 的通用约定要求，返回的字符串应该是“一个简洁但内容丰富的表示，对人们来说是很容易阅读的”。虽然可以认为 `PhoneNumber@163b91` 简洁易读，但相比于 `707-867-5309`，但并不是很丰富 。 toString 通用约定“建议所有的子类重写这个方法”。好的建议，的确如此！
@@ -1682,7 +1682,7 @@ public interface Comparable<T> {
 　　编写 `compareTo` 方法与编写 `equals` 方法类似，但是有一些关键的区别。 因为 `Comparable` 接口是参数化的，`compareTo` 方法是静态类型的，所以你不需要输入检查或者转换它的参数。 如果参数是错误的类型，那么调用将不会编译。 如果参数为 null，则调用应该抛出一个 `NullPointerException` 异常，并且一旦该方法尝试访问其成员，它就会立即抛出这个异常。
 
 　　在 `compareTo` 方法中，比较属性的顺序而不是相等。 要比较对象引用属性，请递归调用 `compareTo` 方法。 如果一个属性没有实现 Comparable，或者你需要一个非标准的顺序，那么使用 `Comparator` 接口。 可以编写自己的比较器或使用现有的比较器，如在条目 10 中的 `CaseInsensitiveString` 类的 `compareTo` 方法中：
- 
+
 ```java
 // Single-field Comparable with object reference field
 public final class CaseInsensitiveString
@@ -2082,7 +2082,7 @@ public static BigInteger safeInstance(BigInteger val) {
 　　在这个条目中，应该添加关于 `Complex` 类的最后一个注释。 这个例子只是为了说明不变性。 这不是一个工业强度复杂的复数实现。 它对复数使用了乘法和除法的标准公式，这些公式不正确会进行不正确的四舍五入，没有为复数的 `NaN` 和无穷大提供良好的语义[Kahan91，Smith62，Thomas94]。
 
 
- 
+
 # 18. 组合优于继承
 
 　　继承是实现代码重用的有效方式，但并不总是最好的工具。使用不当，会导致脆弱的软件。 在包中使用继承是安全的，其中子类和父类的实现都在同一个程序员的控制之下。对应专门为了继承而设计的，并且有文档说明的类来说（条目 19），使用继承也是安全的。 然而，从普通的具体类跨越包级边界继承，是危险的。 提醒一下，本书使用“继承”一词来表示实现继承（当一个类继承另一个类时）。 在这个项目中讨论的问题不适用于接口继承（当类实现接口或当接口继承另一个接口时）。
