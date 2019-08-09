@@ -1,5 +1,5 @@
 ---
-name: contribute.md
+name: 贡献力量
 about: Describe this issue template's purpose here.
 title: "【翻译/错别字校对】条目xxx"
 labels: ''
