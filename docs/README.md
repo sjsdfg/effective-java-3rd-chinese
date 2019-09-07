@@ -147,11 +147,6 @@ Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=102
 - [89. 对于实例控制，枚举类型优于 readResolve](notes/89.%20对于实例控制，枚举类型优于%20readResolve.md)
 - [90. 考虑用序列化代理代替序列化实例](notes/90.%20考虑用序列化代理代替序列化实例.md)
 
-## 📖 高效 Java 第三版完整版阅读
-
-- [高效 Java 第三版完整版](doc/effective-java-3rd-chinese.md)</br>
-
-
 ## 😋 Give me a Favor
 <center>
 <img width="600" src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
