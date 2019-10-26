@@ -17,11 +17,17 @@
 
 markdown 文件以及英文版原版链接也都放在了 github 上面，希望小伙伴也可以中英文对照，给出一些意见。
 
-## 一起来交流
+## 一起来校对翻译
 
 Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=1027&k=5tscKwN)
 
-![Effective Java 第三版翻译校对群](https://img-blog.csdnimg.cn/20190802232410489.png)
+![Effective Java 第三版翻译校对群](images/groupcode.png)
+
+
+
+##  品牌衣服一折购
+
+![品牌小店](images/shop.jpg)
 
 ## 额外资源
 
