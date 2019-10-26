@@ -21,13 +21,17 @@ markdown 文件以及英文版原版链接也都放在了 github 上面，希望
 
 Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=1027&k=5tscKwN)
 
-![Effective Java 第三版翻译校对群](images/groupcode.png)
+<center>
+<img width="300" src="https://sjsdfg.github.io/effective-java-3rd-chinese/images/groupcode.png" />
+</center>
 
 
 
 ##  品牌衣服一折购
 
-![品牌小店](images/shop.jpg)
+<center>
+<img width="300" src="https://sjsdfg.github.io/effective-java-3rd-chinese/images/shop.jpg" />
+</center>
 
 ## 额外资源
 
