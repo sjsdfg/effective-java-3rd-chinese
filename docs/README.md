@@ -22,7 +22,9 @@ Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=102
 
 ##  品牌衣服一折购
 
-![品牌衣服一折购买](images/shop.jpg)
+<center>
+<img width="400" src="https://upload.cc/i1/2019/10/26/q0FTRg.jpg" />
+</center>
 
 
 
