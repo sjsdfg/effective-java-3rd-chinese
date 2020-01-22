@@ -5,7 +5,7 @@
 现在全部章节已经更新完成
 - [github pages](https://sjsdfg.github.io/effective-java-3rd-chinese/#/)：提供更好的在线阅读版本
 - [gitee pages](http://sjsdfg.gitee.io/effective-java-3rd-chinese/#/)： 提供更快的访问速度
-- [pdf 下载](https://github.com/sjsdfg/effective-java-3rd-chinese/releases/download/v1.3/Effective-Java-3rd-LaTex-Pattern.pdf)
+- [pdf 下载](https://github.com/sjsdfg/effective-java-3rd-chinese/files/4098517/effective-java-20200123.pdf)
 
 ## about this repository
 
@@ -35,8 +35,8 @@ Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=102
 
 ## 额外资源
 
-* [effective-java-2nd 中文版 ](https://pan.baidu.com/s/1R6H9UHbFYubWWY9HrclZ2A)
-* [effective-java-3rd 英文版 ](https://pan.baidu.com/s/1mJx5ZrOD_RPjf3ghQnBV5g)
+* [effective-java-2nd 中文版](https://pan.baidu.com/s/1R6H9UHbFYubWWY9HrclZ2A)
+* [effective-java-3rd 英文版](https://pan.baidu.com/s/1mJx5ZrOD_RPjf3ghQnBV5g)
 * [effective-java-3rd 源代码](https://github.com/jbloch/effective-java-3e-source-code)
 
 ## 友情链接
