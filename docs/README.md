@@ -14,7 +14,17 @@
 
 Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=1027&k=5tscKwN)
 
-![Effective Java 第三版翻译校对群](https://img-blog.csdnimg.cn/20190802232410489.png)
+<center>
+<img width="300" src="http://sjsdfg.gitee.io/effective-java-3rd-chinese/images/groupcode.png" />
+</center>
+
+
+
+##  品牌衣服一折购
+
+<center>
+<img width="400" src="https://upload.cc/i1/2019/10/26/q0FTRg.jpg" />
+</center>
 
 
 
@@ -34,10 +44,10 @@ Effective Java 第三版翻译校对群：[909059971](https://jq.qq.com/?_wv=102
 - [06. 避免创建不必要的对象](notes/06.%20避免创建不必要的对象.md)
 - [07. 消除过期的对象引用](notes/07.%20消除过期的对象引用.md)
 - [08. 避免使用Finalizer和Cleaner机制](notes/08.%20避免使用Finalizer和Cleaner机制.md)
+- [09. 使用try-with-resources语句替代try-finally语句](notes/09.%20使用try-with-resources语句替代try-finally语句.md)
 
 ### Chapter 3. Methods Common to All Objects
 
-- [09. 使用try-with-resources语句替代try-finally语句](notes/09.%20使用try-with-resources语句替代try-finally语句.md)
 - [10. 重写equals方法时遵守通用约定](notes/10.%20重写equals方法时遵守通用约定.md)
 - [11. 重写equals方法时同时也要重写hashcode方法](notes/11.%20重写equals方法时同时也要重写hashcode方法.md)
 - [12. 始终重写 toString 方法](notes/12.%20始终重写%20toString%20方法.md)
