@@ -1,5 +1,11 @@
 - [CS-Notes-PDF](https://github.com/sjsdfg/CS-Notes-PDF) </br>
 
+## 写在最前面
+
+1. 本 repo 从来没有授权过任何公众号进行发布转载，所有公众号的引流都是公众号拥有者的自发行动，和本 repo 无关
+2. 为什么搞这个项目，本项目初始创建的时候并不知道「effective java 3rd」已经引入翻译。并且 repo 主是一个 true pdf 的狂热爱好者，个人制作这个项目也是因为更喜欢 true pdf 的观感。并且如果出现翻译错漏，迭代更新也是及时生效的。
+3. 免责声明：如果因为前面公众号的转载影响了上市书籍的销量，可以 issue 区联系我，关闭本项目。
+
 ## ✏️ CS-Notes-PDF
 
 - [CS-Notes-PDF](https://github.com/sjsdfg/CS-Notes-PDF) </br>
